@@ -3,6 +3,7 @@ import "express-async-errors";
 import { insuranceRouter } from "./routes/InsuranceRouter";
 import { userRouter } from "./routes/UserRouter";
 import { simulatorRouter } from "./routes/SimulatorRouter";
+import { authRouter } from "./routes/AuthRouter";
 const App = express();
 
 App.use(express.json());
@@ -10,6 +11,7 @@ App.use(express.json());
 App.use("/users", userRouter);
 App.use("/insurances", insuranceRouter);
 App.use("/simulator", simulatorRouter);
+App.use("/auth", authRouter);
 
 App.get("/", (request: Request, response: Response) => {
   response.json({ message: "Seuguru" });
